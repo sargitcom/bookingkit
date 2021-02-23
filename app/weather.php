@@ -2,7 +2,12 @@
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$location = $argv[1];
+$location = isset($argv[1]) ? $argv[1] : '';
+
+if ($location == '') {
+    echo "Provide location name as a parameter\n";
+    exit;
+}
 
 $apiKey = 'c0f764ce5e4c25576b8d6325fc223810';
 
